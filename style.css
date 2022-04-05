@@ -367,4 +367,9 @@ textarea {
     .main-content {
         width: 100%;
     }
+
+
+    .col {
+        width: 100%;
+    }
 }
