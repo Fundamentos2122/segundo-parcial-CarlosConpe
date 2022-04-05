@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="[ flex ]">
     <section class="[ side-form ] [ bg-primary color-white ]">
         <h1 class="[ text-center ]">RECETARIO</h1>
         <form class="[ flow ]" id="form-recipe" autocomplete="off">
             <div class="[ form-group ] [ flow ]">
                 <label for="title">Nombre</label>
-                <input type="text" name="title" class="[ form-control ] [ color-gray ]"/>
+                <input type="text" name="title" class="[ form-control ] [ color-gray ]" />
             </div>
             <div class="[ form-group ] [ flow ]">
                 <label for="img_url">URL Imagen</label>
-                <input type="text" name="img_url" class="[ form-control ] [ color-gray ]"/>
+                <input type="text" name="img_url" class="[ form-control ] [ color-gray ]" />
             </div>
             <div class="[ form-group ] [ flow ]">
                 <label for="description">Descripción</label>
@@ -26,7 +28,7 @@
             <div class="[ form-group ] [ flow ]">
                 <label for="title">Agregar ingrediente</label>
                 <div class="input-group">
-                    <input type="text" id="ingredient-name" class="[ form-control ] [ color-gray ]"/>
+                    <input type="text" id="ingredient-name" class="[ form-control ] [ color-gray ]" />
                     <button class="btn" type="button" data-state="white" id="newIng">+</button>
                 </div>
             </div>
@@ -82,4 +84,5 @@
     </section>
     <script src="app.js"></script>
 </body>
+
 </html>

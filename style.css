@@ -24,12 +24,11 @@
     font-family: sans-serif;
 }
 
-html, 
-body, 
+html,
+body,
 h1, h2, h3, h4, h5, h6,
 p,
-ol, ul, dl, dd
-ol[class],
+ol, ul, dl, dd ol[class],
 ul[class] {
     margin: 0;
 }
@@ -38,16 +37,33 @@ body {
     min-height: 100vh;
 }
 
-body > * {
+body>* {
     padding: 1em;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2.25rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1.25rem; }
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
 
 ol[class],
 ul[class] {
@@ -74,7 +90,7 @@ textarea {
     resize: none;
 }
 
-.flow > * + * {
+.flow>*+* {
     margin-top: var(--flow-space, 1em);
 }
 
@@ -169,7 +185,7 @@ textarea {
     border-radius: 0.25em;
     color: var(--btn-base-font-color);
     padding: 0.5em 0.75em;
-    transition: 
+    transition:
         border-color ease 150ms,
         background-color ease 150ms,
         color-color ease 150ms;
@@ -181,7 +197,7 @@ textarea {
     color: var(--btn-altern-font-color);
 }
 
-.form-group > * {
+.form-group>* {
     --flow-space: 0.5em;
     display: block;
 }
@@ -195,7 +211,7 @@ textarea {
     padding: 0.5em 0.75em;
     width: 100%;
     border: solid 1px var(--border-color);
-    transition: 
+    transition:
         box-shadow ease 150ms,
         border-color ease 150ms;
 }
@@ -209,23 +225,23 @@ textarea {
     outline: none;
 }
 
-.input-group > :not(:last-child) {
+.input-group> :not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.input-group > :not(:first-child) {
+.input-group> :not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-.ing-list > * {
+.ing-list>* {
     display: block;
     padding: 0.5em 1em;
     position: relative;
 }
 
-.ing-list > * > .close {
+.ing-list>*>.close {
     background-color: transparent;
     border: none;
     color: var(--color-gray);
@@ -235,16 +251,16 @@ textarea {
     right: 1em;
 }
 
-.ing-list > :not(:last-child) {
+.ing-list> :not(:last-child) {
     border-bottom: solid 1px var(--border-color);
 }
 
-.ing-list > :first-child {
+.ing-list> :first-child {
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
 }
 
-.ing-list > :last-child {
+.ing-list> :last-child {
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 }
@@ -267,11 +283,11 @@ textarea {
     transition: opacity ease-out 150ms;
 }
 
-.card > * + * {
+.card>*+* {
     padding: 1rem;
 }
 
-.recipe-img { 
+.recipe-img {
     display: flex;
     align-items: center;
     max-width: 30%;
@@ -282,7 +298,7 @@ textarea {
     padding: 1em;
 }
 
-.recipe-info > h2 {
+.recipe-info>h2 {
     border-bottom: solid 8px var(--color-secondary);
 }
 
@@ -290,7 +306,7 @@ textarea {
     gap: 0.25em;
 }
 
-.recipe-ing > :not(:last-child)::after {
+.recipe-ing> :not(:last-child)::after {
     content: ",";
 }
 
@@ -332,4 +348,23 @@ textarea {
     --btn-base-bg-color: var(--color-warning);
     --btn-altern-font-color: var(--color-dark);
     --btn-altern-bg-color: var(--color-warning-darker);
+}
+
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 0.7em;
+    }
+
+    .side-form {
+        width: 100%;
+    }
+
+    .main-content {
+        width: 100%;
+    }
 }
