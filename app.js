@@ -37,6 +37,12 @@ function submitRecipe(e) {
     formRecipe["title"].value = ''
     formRecipe["img_url"].value = ''
     formRecipe["description"].value = ''
+    let ingredientsSelected = document.getElementsByClassName("[ bg-white color-gray ingredient ]");
+    console.log(ingredientsSelected.length)
+    for(var i = 0; i< ingredientsSelected.length; i++){
+        deleteIngredient(ingredientsSelected[i].id)
+    }
+
 }
 
 function getRecipes() {
@@ -105,11 +111,12 @@ function paintRecetas() {
 
     let recipes = document.getElementsByClassName("[ row ] [ flex ]");
     for(var i = 0; i<recipes.length;i++){
-        recipes[i].style.display = "block"
+        recipes[i].style.display = "flex"
     }
     let titlePop = document.getElementsByClassName("[ color-primary ] [ text-center ]")
     console.log(titlePop);
-    titlePop[0].style.display = "block"
+    titlePop[0].style.display = "flex"
+    
     hideElements();
 }
 
@@ -132,7 +139,7 @@ function addIngredient() {
     }
 
     let ingredient = `
-    <li class="[ bg-white color-gray ]" id='${ingredientElement.id}'>
+    <li class="[ bg-white color-gray ingredient ]" id='${ingredientElement.id}'>
         ${ingredientName.value}
         <button class="close" type="button" onclick="deleteIngredient(${ingredientElement.id})">X</button>
     </li>`
@@ -182,7 +189,7 @@ function getRecipe(id){
     let titlePop = document.getElementsByClassName("[ color-primary ] [ text-center ]")
     
     btnVolver[0].style.display = "block"
-    titlePop[1].style.display = "blocks"
+    titlePop[1].style.display = "block"
 
     let recipes = document.getElementsByClassName("[ row ] [ flex ]");
     for(var i = 0; i<recipes.length;i++){
@@ -196,18 +203,17 @@ function hideElements(){
     let hiddenElements = document.getElementsByClassName("[ recipe ] [ flex ] [ shadow ]")
     let btnVolver = document.getElementsByClassName("text-right");
     let titlePop = document.getElementsByClassName("[ color-primary ] [ text-center ]")
-
     
     
     for(var i = 0; i<hiddenElements.length;i++){
         hiddenElements[i].style.display = "none"
     }
 
-    if(btnVolver.length>0){
-        btnVolver[0].style.display = "none"
+    for(var i = 0; i<btnVolver.length;i++){
+        btnVolver[i].style.display = "none"
     }
-    if(titlePop.length>1){
-        titlePop[1].style.display = "none"
+    for(var i = 1; i<btnVolver.length+1;i++){
+        titlePop[i].style.display = "none"
     }
     
 }

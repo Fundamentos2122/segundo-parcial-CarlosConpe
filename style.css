@@ -269,6 +269,8 @@ textarea {
     --gap-cards: 1em;
     margin-inline: calc(-1 * var(--gap-cards));
     row-gap: 1em;
+    display: flex;
+    flex-direction: row;
 }
 
 .col {
